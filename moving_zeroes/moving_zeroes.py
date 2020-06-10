@@ -5,8 +5,12 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
     n = len(arr)
+# Count of non-zero elements
     count = 0
 
+# Traverse the array. If arr[i] is non-zero, then 
+# swap the element at index 'count' with the 
+# element at index 'i'
     for i in range(0, n):
         if (arr[i] != 0):
             arr[count], arr[i] = arr[i], arr[count]
