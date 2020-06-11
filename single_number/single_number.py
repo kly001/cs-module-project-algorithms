@@ -6,6 +6,7 @@ def single_number(arr):
     # Your code here
 
 #  Apply the formula:  2*(sum_of_array_without_duplicates) – (sum_of_array)
+#  NOTE:  In python, 'set()' is an unordered collection with no duplicate elements.
     return 2 * sum(set(arr)) - sum(arr)
 
 
