@@ -4,8 +4,18 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
+    max = 0
+    length = len(nums)
+    
 
-    pass
+    for i in range(length - k+1):
+        max = nums[i]
+        for j in range(1, k):
+            if nums[i+j] > max:
+                max = nums[i+j]
+        return max
+
+   
 
 
 if __name__ == '__main__':
@@ -13,4 +23,8 @@ if __name__ == '__main__':
     arr = [1, 3, -1, -3, 5, 3, 6, 7]
     k = 3
 
-    print(f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
+    print(f"Output of sliding_window_max function is: {sliding_window_max(nums, k)}")
+
+#  Resource:
+
+# 1.  https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subnumsays-of-size-k/?ref=rp
