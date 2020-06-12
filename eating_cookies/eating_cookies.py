@@ -17,7 +17,7 @@ Returns: an integer
 #     return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
 
 #############################################################
-
+#  Method 2
 #  Caching/memoization: Save work so it doesn't have to be repeated
 
 #  Need some sort of data structure where we can save data
@@ -27,7 +27,7 @@ Returns: an integer
 #  how do we add answers into the cache?
 
 def eating_cookies(n, cache = None):
-    print(n)
+    # print(n)
 # base case: when there are no more cookies
     if n == 0:
         return 1
@@ -42,7 +42,7 @@ def eating_cookies(n, cache = None):
         return cache[n]
     else:
         if not cache:
-            cache = [0 for _ in range(n+1)]  ### An array
+            cache = [0 for i in range(n+1)]  ### An array
             ### OR  ###
             # cache = {i: 0 for i in range(n+1)}   ### A dictionary
 # save the answer to the cache 
@@ -51,8 +51,19 @@ def eating_cookies(n, cache = None):
     return cache[n]
    
 
+############################################################
+
+# Method 3
+
+# def eating_cookies(n, cache = {}):
+#     if n in cache:
+#         return cache[n]
+#     cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+#     return cache[n]
+
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
     num_cookies = 5
 
     print(f"There are {eating_cookies(num_cookies)} ways for Cookie Monster to each {num_cookies} cookies")
+ 
